@@ -105,5 +105,12 @@ class CreditProtectionTests(unittest.TestCase):
         self.assertEqual(calls, [])
 
 
+def load_tests(loader, tests, pattern):
+    import test_prospective_format
+
+    tests.addTests(loader.loadTestsFromModule(test_prospective_format))
+    return tests
+
+
 if __name__ == "__main__":
     unittest.main()
